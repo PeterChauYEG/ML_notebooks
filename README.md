@@ -41,6 +41,7 @@ docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks --name jupyter 
 ```
 cd ~
 docker start -i jupyter /bin/bash
+```
 
 ## Notebook practice implementation source
 1. [MNIST Classifier](https://github.com/amygdala/tensorflow-workshop/blob/master/workshop_sections/mnist_series/mnist_simple.py)
