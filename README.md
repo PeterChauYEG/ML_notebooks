@@ -21,17 +21,9 @@ I just use a [docker](https://www.docker.com/ container as my data science envir
 Here's how I set it up:
 0. Clone this repository: `git clone https://github.com/PeterChauYEG/ML_notebooks.git`
 1. Install docker
-2. Get an appropraiate image. I use the [Creative Applications of Deep Learning w/ Tensorflow](https://github.com/pkmital/CADL) image
-`git clone https://github.com/pkmital/CADL.git`
-3. Change directories and build the Dockerfile:  
+2. Run the container:
 ```
-cd CADL
-docker build -t jupyter .
-```
-4. Change directories and run the container:
-```
-cd ../..
-docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks --name jupyter jupyter /bin/bash
+docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks:/notebooks --name jupyter pkmital/cadl:latest /bin/bash
 ```
 5. You should now be in the docker container's shell. You should see this repository's file's that were cloned to your device: `ls`
 6. Start your jupyter notebook: `jupyter notebook`
