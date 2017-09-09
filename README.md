@@ -23,7 +23,7 @@ Here's how I set it up:
 1. Install docker
 2. Run the container:
 ```
-docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks:/notebooks --name jupyter pkmital/cadl:latest /bin/bash
+docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks:/notebooks -e "TENSORFLOW_VERSION=1.3.0" --name jupyter pkmital/cadl:latest /bin/bash
 ```
 5. You should now be in the docker container's shell. You should see this repository's file's that were cloned to your device: `ls`
 6. Start your jupyter notebook: `jupyter notebook`
