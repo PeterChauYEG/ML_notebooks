@@ -1,7 +1,7 @@
 # Machine Learning Notebooks
-What is this? 
+What is this?
 
-This is my set of practice implementations of common machine learning algorithms. 
+This is my set of practice implementations of common machine learning algorithms.
 It's me working through a bunch of great pet machine learning algoritms.
 
 You can view them in the github repository as it can display Jupyter notebooks.
@@ -34,6 +34,26 @@ docker run -it -p 8888:8888 -p 6006:6006 -v /$(pwd)/ML_notebooks:/notebooks -e "
 cd ~
 docker start -i jupyter /bin/bash
 ```
+
+## OpenAI Universe
+- install openai Universe
+```
+git clone https://github.com/openai/universe.git
+cd universe
+pip install -e .
+pip install Twisted==16.0.0
+```
+
+- OSX needs some other packages
+```
+pip install numpy incremental
+sudo brew install golang libjpeg-turbo
+```
+
+- `docker build -t universe .`
+- test that it works: `docker run --privileged --rm -e DOCKER_NET_HOST=172.17.0.1 -v /var/run/docker.sock:/var/run/docker.sock universe pytest`
+`
+- run a dev container`docker run --privileged --rm -it -e DOCKER_NET_HOST=172.17.0.1 -v /var/run/docker.sock:/var/run/docker.sock -v /${pwd}:/usr/local/universe universe python`
 
 ## Notebook practice implementation source
 1. [MNIST Classifier](https://github.com/amygdala/tensorflow-workshop/blob/master/workshop_sections/mnist_series/mnist_simple.py)
